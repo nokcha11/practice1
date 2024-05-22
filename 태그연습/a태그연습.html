@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>a태그연습</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <style>
   img { width: 200px;}
@@ -26,11 +27,19 @@
       <img src="./images/google.png" alt="구글로고">
     </a>
   </div>
-
+  <!-- a태그에 이미지 상대경로, download -이미지 클릭시다운 -->
+  <!-- ctrl+shipt+p wrap기능으로 .class넣어서 묶기 -->
   <div class="google-box">
-    <a href="https://www.naver.com">
-      <img src="./images/img.png" alt="네이버로고">
+    <a href="./images/naver.png" download>
+      <img src="./images/naver.png" alt="네이버로고">
     </a>
   </div>
+
+  <p>클릭시 <a href="./태그연습.html">태그연습.html</a>로 이동</p>
+
+  <a href="mailto:lie8220@naver.com">이메일 보내기</a>
+  <a href="tel:01012345678">전화 걸기</a>
+  <!-- download - 텍스트 이미지 다운 -->
+  <a href="./images/naver.png" download>네이버 로고 다운</a>
 </body>
 </html>
