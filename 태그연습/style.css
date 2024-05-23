@@ -1,11 +1,17 @@
 a { color: #000; text-decoration: none;}
-
+img { width: 200px;}
 .list a { 
   font-size: 20px;
   /* bold or 700 */
   font-weight: bold;
+  color: blue;
 }
 
+.box p { color: blue;}
 .box {
-  height: 1000px;
+  height: 500px;
 }
+
+.red { border: 5px solid red;}
+.blue { border: 5px solid blue;}
+.green { border: 5px solid green;}
