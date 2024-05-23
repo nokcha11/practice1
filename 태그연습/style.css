@@ -15,4 +15,10 @@ img { width: 200px;}
 
 .red { border: 5px solid red;}
 .blue { border: 5px solid blue;}
-.green { border: 5px solid green;}
+.green { 
+  width: 400px;
+  border: 5px solid green;
+  /* auto : 자동으로 가운데 정렬 */
+  margin: 0 auto; 
+  padding: 50px;
+}
