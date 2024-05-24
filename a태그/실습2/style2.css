@@ -1,0 +1,23 @@
+body { background-color: #000;}
+
+.allbox { margin: 0 auto; }
+
+div { 
+  width: 400px; height: 50px; line-height: 50PX;
+  text-align: center; font-weight: bold;
+}
+
+h1 { margin: 0;}
+
+.images-box {
+  width: 400px; height: 500px;
+  line-height: 500px;
+}
+
+img { width: 400px; padding: 180px 0;}
+
+.box { background: #fff;
+border-radius: 50px;
+}
+p { line-height: 50px; margin: 0;}
+span { text-decoration: underline;}
