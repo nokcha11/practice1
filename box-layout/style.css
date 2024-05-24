@@ -1,0 +1,102 @@
+
+.left > div {
+  margin: 20px 0;
+}
+
+.box div {
+  width: 100px;
+  height: 100px;
+  border: 4px solid red;
+  box-sizing: border-box;
+  /* border값과 padding값포함해서 */
+}
+
+.left-float div {
+  float: left;
+}
+
+.clear {
+  clear: both;
+}
+
+.left-inline div {
+  /* inline / block / inline-block  */
+  display :inline-block;
+}
+
+.left-flex {
+  display: flex;
+}
+
+/* right */
+.right > div {
+  margin: 20px 0;
+}
+
+/* .right-float div바로 right를 주면 3,2,1거꾸로 정렬되기때문에
+자식요소에 먼저 왼쪽으로 수평정렬후 부모요소에 오른쪽정렬 */
+.right-float { 
+  float: right;
+}
+
+.right-float div {
+  float: left;
+}
+
+/* text-align을 줄떄는 부모요소에 준다! */
+.right-inline {
+  text-align: right; 
+}
+
+.right-inline div {
+  display: inline-block;
+  text-align: left;
+  /* 자식요소에 다시 텍스트 정렬 왼쪽으로 주어야 텍스트가 오른쪽으로 치우치지 않는다. */
+}
+
+.right-flex {
+  display: flex;
+  /* start - left / end - right / center */
+  justify-content: end;
+}
+
+.center-float {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.center-float div {
+  float: left;
+}
+
+.center-inline {
+  text-align: center;
+}
+
+.center-inline div { 
+  display: inline-block;
+  text-align: left;
+}
+
+.center-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.flex {
+  margin-top: 200px;
+}
+
+.flex-box {
+  height: 800px;
+  border: 5px solid blue;
+  display: flex;
+  
+  /* 기본값 : row */
+  flex-direction: column;
+
+  /* 수직정렬 */
+  align-items: center;
+   /* 수평정렬 */
+  justify-content: center;
+}
