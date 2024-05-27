@@ -1,0 +1,42 @@
+.wrap {
+  margin: 0 auto;
+  width: 90%; 
+  display: flex; 
+  /* nowrap이 기본값 
+  flex-wrap : wrap 공간이 부족할 시 아래로 떨어진다/ */
+  flex-wrap: wrap;
+  /* justify-content: center;
+  flex-direction: column;
+  align-items: center; */
+  font-size: 36px;
+}
+
+header { 
+  /* 전체영역에 90%를 주었기 때문에 자식요소의 100%는 전체영역90%이다. */
+  width: 100%; height: 100px;
+  background: plum;
+  display: flex; 
+}
+
+.main { 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.main-left { 
+  width: 20%; height: 700px;
+  background: palegreen;
+  justify-content: left;
+}
+
+.main-right { 
+  width: 80%; height: 700px;
+  background: paleturquoise;
+  justify-content: right;
+}
+
+footer { 
+  width: 100%; height: 100px;
+  background: peachpuff;/
+} 
