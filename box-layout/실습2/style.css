@@ -1,0 +1,94 @@
+/* menu */
+li {
+  list-style: none;
+}
+.nav { 
+  display: flex;
+  /*space-between 양끝으로 정렬 */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  /* border: 1px solid red; */
+  background: #000;
+}
+
+/* logo */
+.logo img { 
+  width: 50px;
+}
+
+.menu-list { 
+  display: flex;
+  color: #fff
+}
+
+.menu-list li { margin: 20px;}
+
+/* 배경이미지 */
+.back-img {
+  margin: 0;
+  height: 400px;
+  /* css에서 배경이미지 넣기 url!  */
+  /* 이미지 url로 넣을때 아래 3가지 사항 넣기! */
+  background-image: url(./images/back.jpeg);
+  background-repeat: no-repeat; /* no-repeat 이미지반복x */
+  background-size: cover;
+  background-position: center;
+}
+
+.back-img .text {
+  padding: 100px;
+  text-align: center;
+}
+.back-img h1 { 
+  color: #fff;
+}
+
+.back-img p { 
+  color: #fff;
+}
+
+.section-text {
+  margin: -100px auto;
+  width: 500px;
+  padding: 50px 30px;
+  background: #000;
+  color: #fff;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 5px 5px 5px 0.5px rgb(94, 94, 95);
+}
+
+/* content article */
+.content { 
+  margin: 250px 300px auto;
+  display: flex;
+}
+article { 
+  margin: 0 50px;
+  width: 300px; height: 400px;
+  background: #000; color: #fff;
+  border-radius: 30px;
+}
+
+.content-text {
+  padding: 30px;
+}
+
+/* footer */
+footer {
+  margin: 100px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  background: #000;
+}
+footer h1 { 
+  margin-left: 50px;
+  color: #fff; font-size: 20px;}
+footer ul { 
+  margin-right: 50px;
+  display: flex; 
+}
+footer ul li { color: #fff; padding: 0 20px;}
