@@ -1,0 +1,35 @@
+
+.wrap {
+  width: 900px;
+  margin: 0 auto;
+  font-size: 36px;
+}
+
+header { 
+  width: 900px; height: 100px;
+  background-color: plum;
+}
+
+.main {
+  width: 900px;
+}
+
+.main-left {
+  float: left;
+  width: 200px; height: 700px;
+  background-color: paleturquoise;
+}
+
+.main-right {
+  float: left;
+  width: 700px; height: 700px;
+  background: palegreen;
+}
+
+footer { 
+  width: 900px; height: 100px;
+  background-color: peachpuff;
+  clear: both;
+  /* 클리어보스 부모요소가 아닌 본인에게 넣는 경우
+  main자리에 공간이 있다고 인식하고 그 공간을 footer가 차지하기 때문에 clear both를 footer에 주어야 한다. */
+ }
