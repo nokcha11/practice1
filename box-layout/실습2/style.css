@@ -74,7 +74,7 @@ a {
   /* 수직정렬 */
   flex-direction: column;
   justify-content: center;
-  align-items: center; /* rnedl text-align센터 주지 않아도 됨 */
+  align-items: center; /* 굳이 text-align센터 주지 않아도 됨 */
   height: 600px; /* 수직 가운데 정렬하기 위해 높이값준다! */
   color: #fff;
 }
