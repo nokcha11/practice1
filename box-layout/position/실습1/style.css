@@ -1,2 +1,242 @@
+/* 기본 */
 * {margin: 0; padding: 0;}
+li { list-style: none; }
+a { color: inherit; text-decoration: none; }
 
+/* header */
+.global-header {
+  width: 100%; /* fixed를 주면 너비가 작아진다. */
+
+  position: fixed;
+  top: 0; left: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: aqua;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.global-header h1 a img {
+  width: 50px;
+}
+
+/* menue */
+.gnb {
+  display: flex;
+  justify-content: center;
+}
+
+.gnb a {
+  padding: 0 15px;
+  color: #fff;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+/* main */
+.back-img {
+  height: 600px;
+  background-image: url(./images/스누피배경.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.back-text {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  padding: 100px; box-sizing: border-box;
+}
+
+.back-text h2, p, button {
+  margin-top: 20px;
+}
+
+.back-text h2 { font-size: 60px;}
+
+.back-text button {
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  padding: 5px 12px;
+  box-sizing: border-box;
+}
+
+/* text box */
+
+section.box {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+.box div {
+  width: 100%; 
+  margin: 50px 20px ; 
+  padding: 30px;
+  background: powderblue;
+  border-radius: 15px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* snoopy img */
+
+.fixed-img {
+  width: 100%; height: 800px;
+
+  background-color: powderblue;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.fixed-img div {
+  margin-left: 20px;
+
+  width: 700px; height:700px;
+
+  /* absolute를 주면  background-attachment: fixed;사용x */
+  background-attachment: fixed;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  background-color: #fff;
+}
+
+.fixed-img .snoopy1 {
+  background-image: url(./images/logo.png);
+  background-position: left;
+}
+
+.fixed-img .snoopy2 {
+  background-image: url(./images/fixed-img.png);
+  background-position: right;
+}
+
+
+/* slide-menu */
+.slide-menu {
+  width: 200px; height: 200px;
+
+  text-align: center;
+
+  position: fixed;
+  top: 150px; right: 50px;
+  z-index: 3;
+
+  background-color: #fff;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0.5, 0.5);
+}
+
+.slide-menu ul li { 
+  height: 50px; line-height: 50px;
+}
+
+/* footer */
+footer { 
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 20px; box-sizing: border-box;
+
+  background-color: aqua;
+  color: #fff;
+  font-size: 25px;
+
+  border-radius: 0 0 0 10px;
+}
+
+footer ul {
+  display: flex;
+}
+
+footer li a {
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+
+/* scroll */
+.arrow {
+  position: fixed;
+  bottom: 20px; right: 20px;
+  width: 100px; height: 100px;
+  border: 1px solid red;
+}
+
+
+/* 태블릿 */
+@media screen and (max-width: 1200px) {
+
+  /* text box */
+
+section.box {
+  margin: 0 auto;
+  width: 60%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} 
+
+.box div {
+  width: 100%; 
+  margin: 20px ; 
+  padding: 30px;
+  background: powderblue;
+  border-radius: 15px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+  
+  /* snoopy img */
+
+.fixed-img div {
+  width: 800px; height: 800px;
+  margin: 50px 100px;
+  background-color: powderblue;
+}
+
+.fixed-img .snoopy1 {
+  background-image: url(./images/logo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.fixed-img .snoopy2 {
+  display: none;
+}
+}
+
+
+/* mobile */
+@media screen and (max-width: 768px) {
+  
+  /* footer */
+footer { 
+  height: 200px;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 30px;
+}
+
+footer h3, li {
+  margin: 10px;
+}
+
+}
