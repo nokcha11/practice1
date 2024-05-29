@@ -1,0 +1,79 @@
+.position {
+  position: relative;
+  width: 600px; height: 800px;
+  margin: 50px auto;
+  border: 4px solid blue;
+}
+
+.position div {
+  width: 200px; height: 120px;
+  border: 1px solid #000;
+}
+
+.box1 {
+  /* tpo, bottom, left, right */
+  position: absolute;
+  /* 본인에 absolute를 주면 position의 자식이 되고 부모요소인 .position에 relative를 줬기때문에 
+  기준이 .position이 된다.*/
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: palegoldenrod;
+}
+
+.box2 {
+  position: fixed; /* 스크롤을 내려도 고정돼서 내려온다. */
+  top: 20px;
+  right: 20px;
+  background: palegreen;
+}
+
+.box3 {
+  /* relative로 기준점을 주고 z-index에 값을 많이 주면 앞으로 배치된다. */
+  position: sticky;
+   /* sticky는 지정한 값만큼에서 시작하고 지정한 값만큼 따라온다. */
+  top: 0px; 
+  left: 0;
+  background: plum;
+  width: 200px; height: 120px;
+  border: 1px solid #000;
+}
+
+.scroll {
+  height: 1600px;
+}
+
+.back-box {
+  position: relative; /* 기준 */
+
+  /* 높이값을 줘야 배경색이 보인다! */
+  height: 600px;
+  background: powderblue; 
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.back-img {
+  position: absolute; /* back-boxrk 기준 */
+
+  /*  transform: translate(-50%, -50%); */
+  /* 가운데 정렬 */
+  /* 가로,세로 반씩 마이너스 값을 줘서 가운데로 맞춘다! */
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 400px;
+  height: 400px;
+  background-image: url(./images/고양이.jfif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /*  background-attachment */
+  /* 기본값 : scroll */
+  background-attachment: fixed; 
+  /* 스크롤돼도 고정된 액자느낌 */
+
+}
