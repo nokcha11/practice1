@@ -28,6 +28,7 @@
 <body>
   <!-- 상단으로 이동할 id명 넣어주기 -->
   <div class="wrap" id="top"> 
+    <!-- header -->
     <header class="global-header">
       <h1>
         <div class="logo">
@@ -35,7 +36,14 @@
             <img src="./assets/images/logo.png" alt="snoopy logo"></a>
         </div>
       </h1>
-      <div class="menu">
+
+      <!-- 모바일 햄버거메뉴 -->
+      <div class="sidebar-open-btn sm-only"> <!-- 모바일에서 보이게 클래스 줌 -->
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <!-- 데스크탑 / 태블릿 메뉴 -->
+      <div class="menu sm-hidden"> <!-- 모바일에서는 안보이게 클래스줌 -->
         <ul class="gnb">
           <li><a href="">menu1</a></li>
           <li><a href="">menu2</a></li>
@@ -45,6 +53,7 @@
       </div>
     </header>
 
+    <!-- main -->
     <main>
       <!-- 배경이미지 -->
       <div class="back-img">
@@ -129,6 +138,20 @@
       <img src="./assets/images/fixed-img.png" alt="">
     </div>
   </div>
+
+  <!-- 모바일 사이드바 -->
+  <aside class="sidebar">
+      <div class="sidebar-close-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+
+    <ul>
+      <li><a href="">menu1</a></li>
+      <li><a href="">menu2</a></li>
+      <li><a href="">menu3</a></li>
+      <li><a href="">menu4</a></li>
+    </ul>
+  </aside>
 
   <!-- script  -->
   <script src="./script.js"></script>
