@@ -12,16 +12,23 @@ button {
   cursor: pointer;
 }
 
+/* 모바일 버젼에서만 보일 요소 (D,T모드에서는 보이지 않게 NONE) */
+.sm-only {
+  display: none;
+}
+
 /* fonts */
 body { font-family: "Black Han Sans", sans-serif;}
 
 
+
+
 /* header */
 .global-header {
-  width: 100%; /* fixed를 주면 너비가 작아진다. */
+ /*  width: 100%; */ /* fixed를 주면 너비가 작아진다. */
 
-  position: fixed;
-  top: 0; left: 0;
+  /* position: fixed;
+  top: 0; left: 0; */
 
   display: flex;
   justify-content: space-between;
@@ -89,23 +96,15 @@ body { font-family: "Black Han Sans", sans-serif;}
 .back-text button {
   margin-top: 20px;
 }
+/* button태그를 a태그로 묶으면 문제발생한는 경우: 
+a태그는 보통 링크를 이동하려는 습성때문에 버튼을 a태그로 묶으면 클릭했을 때 
+화면이 깜빡깜빡거리는 장애가 발생한다. */
 
 .back-text h2 { font-size: 60px;}
 .back-text p { font-size: 22px;}
 
-/* popup*/
-.popup-open-btn {
-  padding: 12px 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  cursor: pointer;
-}
 
-.popup-open-btn a {
-  color: #000;
-}
-
-/* text box */
+/* 배경 text box */
 
 section.box {
   margin: 0 auto;
@@ -146,7 +145,7 @@ section.box p {
 .fixed-img div {
   margin-left: 20px;
 
-  /*이미2개의 전체너비/높이*/
+  /*이미지2개의 전체너비/높이*/
   width: 500px; height:500px;
 
   /* absolute를 주면  background-attachment: fixed;사용x */
@@ -165,40 +164,14 @@ section.box p {
   background-image: url(./assets/images/logo.png);
   
   /* 이미지 넣는 좌표 잘 정해보기 */
-  background-position: bottom left 260px;
+  background-position: bottom left 450px;
 }
 
 .fixed-img .snoopy2 {
   background-image: url(./assets/images/fixed-img.png);
 
-  background-position: bottom right 240px;
+  background-position: bottom right 450px;
 }
-
-
-/* quick-menu */
-aside.quick-menu {
-  width: 200px; 
-  padding: 20px; 
-
-  text-align: center;
-
-  position: fixed;
-  top: 150px; right: 50px;
-  z-index: 3;
-
-  background-repeat: 12px;
-  background-color: #fff;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0.5, 0.5);
-}
-
-.quick-menu ul li { 
-  height: 50px; line-height: 50px;
-}
-
-.quick-menu ul li a {
-  color: #333;
-}
-
 
 /* footer */
 footer { 
@@ -235,6 +208,20 @@ footer li a i:hover {
 } 
 
 
+
+/* popup*/
+.popup-open-btn {
+  padding: 12px 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.popup-open-btn a {
+  color: #000;
+}
+
+
 /* scroll */
 .top-btn {
   position: fixed;
@@ -246,6 +233,32 @@ footer li a i:hover {
   text-align: center;
   border-radius: 50px;
 }
+
+
+/* quick-menu */
+aside.quick-menu {
+  width: 200px; 
+  padding: 20px; 
+
+  text-align: center;
+
+  position: fixed;
+  top: 150px; right: 50px;
+  z-index: 3;
+
+  background-repeat: 12px;
+  background-color: #fff;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0.5, 0.5);
+}
+
+.quick-menu ul li { 
+  height: 50px; line-height: 50px;
+}
+
+.quick-menu ul li a {
+  color: #333;
+}
+
 
 /* popup창 */
 .popup {
@@ -261,6 +274,7 @@ footer li a i:hover {
   border-radius: 30px;
 }
 
+/* popup창 가상class */
 .popup.is-active {
   display: block;
 }
@@ -279,46 +293,86 @@ footer li a i:hover {
   font-size: 30px;
 }
 
+/* 모바일 sidebar menu */
+
+.sidebar {
+  position: fixed;
+  top: 0; right: 0;
+  background-color: #fff;
+  padding: 20px;
+  width: 300px; height: 100%; /* 스크롤을 내려도 높이가 그대로 */
+
+  /* 왼쪽으로 이동할떄는 마이너스값을 사용한다. */
+  transform: translateX(300px); /* 화면상에 안보이게 너비만큼 빼준다! */
+
+  transition: transform 300ms; /* 사이드바 스르륵 나오게 */
+}
+
+.sidebar ul li {
+  text-align: center;
+}
+.sidebar ul li a {
+  display: inline-block; 
+  /* a태그는 inline요소. 상하여백 padding값이 적용이 되지 않기 때문에 inline-block적용 */
+  padding: 8px 0;
+  font-size: 18px;
+  color: #000;
+}
+
+/* x 버튼 */
+.sidebar-close-btn {
+  text-align: right;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* 사이드바 가상클래스 */
+.sidebar.is-active {
+  transform: translateX(0);
+}
+
+
+
+
+
+/* 반응형 */
 
 /* 태블릿 */
 @media screen and (max-width: 1200px) {
 
   /* text box */
 
-section.box {
-  margin: 0 auto;
-  width: 70%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} 
+  section.box {
+    margin: 0 auto;
+    width: 70%;
+    flex-direction: column;
+  } 
 
-.box div {
-  width: 100%; 
-  margin: 20px ; 
-  padding: 30px;
-  background: powderblue;
-  border-radius: 15px;
-  text-align: center;
-  box-sizing: border-box;
-}
+  .box div {
+    width: 100%; 
+    margin: 12px 0; 
+  }
+    
+    /* snoopy img */
+  .fixed-img {
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-  
-  /* snoopy img */
+  .fixed-img div {
+    background-color: transparent;
+  }
 
-.fixed-img div {
-  height: 600px;
-  margin: 50px 100px;
-  background-color: transparent;
-}
+  .fixed-img .snoopy1 {
+    margin-right: 0;
 
-.fixed-img .snoopy1 {
-  margin-right: 0;
+    background-image: url(./assets/images/logo.png);
+    background-position: bottom center;
 
-  background-image: url(./assets/images/logo.png);
-  background-position: bottom center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* background-repeat: no-repeat; */ /* 이미지 사이즈가 작지 않아서 굳이 적용x */
+  /* background-size: cover; */ /* 이미지가 화면사이즈에 맞게 커지게 되기때문에x */
 }
 
 .fixed-img .snoopy2 {
@@ -330,26 +384,40 @@ section.box {
 
 /* mobile */
 @media screen and (max-width: 768px) {
-  
+  /* mobile 햄버거메뉴 */
+  .sm-only {
+    display: block;
+  }
+
+  .sidebar-open-btn {
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .sm-hidden {
+    display: none;
+  }
+
   /* text box */
   section.text {
     width: 90%;
   }
 
   /* footer */
-footer { 
-  height: 200px;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 30px;
-}
+  footer { 
+    height: 200px;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 30px;
+  }
 
-footer h3, li {
-  margin: 10px;
-}
+  footer h3, li {
+    margin: 10px;
+  }
 
-.quick-menu {
-  display: none;
-}
+  .quick-menu {
+    display: none;
+  }
 
 }
