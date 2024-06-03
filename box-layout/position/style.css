@@ -13,8 +13,8 @@
 .box1 {
   /* tpo, bottom, left, right */
   position: absolute;
-  /* 본인에 absolute를 주면 position의 자식이 되고 부모요소인 .position에 relative를 줬기때문에 
-  기준이 .position이 된다.*/
+  /* 본인에 absolute를 주면 position의 자식이 되고 부모요소인 
+  .position에 relative를 줬기때문에 기준이 .position이 된다.*/
   top: 0;
   left: 0;
   z-index: 10;
