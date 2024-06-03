@@ -1,0 +1,204 @@
+/* common */
+* { margin: 0; padding: 0;}
+body { font-family: "Noto Sans KR", sans-serif;}
+li { list-style-type: none;}
+a { color: inherit; text-decoration: none;}
+
+input {border: none;}
+button {
+  border: none; 
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* header */
+
+/* 모바일 햄버거메뉴 */
+.sm-only {
+  display: none;
+}
+
+/* 데스크탑 메뉴 */
+header {
+  padding: 12px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 60px;
+}
+
+.gnb-list {
+  display: flex;
+  justify-content: space-between;
+  width: 280px;
+}
+
+.gnb-list li a {
+  font-weight: bold;
+  /* ease-in-out 부드럽게 시작하고 끝내게 해줌 */
+  transition: color 300ms ease-in-out;
+}
+
+.gnb-list li a:hover {
+  color: rgb(235,27,27);
+}
+
+/* 돋보기모양 검색창 아이콘 */
+.search-btn {
+  cursor: pointer;
+}
+
+/* 고정된 메뉴바 */
+.lnb {
+  /* stickiy : 지정된 지점에서 고정되게 */
+  position: sticky; 
+  top: 0; left: 0;
+  border-top: 2px solid rgb(255,213,23);
+  background: rgb(235,27,27);
+}
+
+.lnb-list {
+  padding: 12px 40px;
+  display: flex;
+}
+
+.lnb-list a {
+  color: #fff;
+  padding-right: 16px;
+}
+
+/* 배경이미지 */
+.back-img {
+  height: 600px;
+  background-image: url(./assets/images/back.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* 햄버거 리스트 이미지 */
+
+.menu-list {
+  width: 90%;
+  margin: 40px auto;
+  display: flex;
+  /* flex-wrap: wrap; 공간이 부족할 때 내려가게 */
+  flex-wrap: wrap;
+  justify-content: space-between; /* 60px뺀 만큼 양쪽정렬 */
+}
+
+.menu-item {
+  margin: 16px 0;
+  /* width: calc((소괄호는 먼저 계산)) */
+  width: calc((100% - 60px) / 3);
+  /* offset-x | offset-y | blur */
+  box-shadow: 3px 3px 5px #e1e1e1;
+  border-radius: 12px;
+  /* border-radius 밖으로 나오는 자식요소 이미지 안보이게 처리 */
+  overflow: hidden; 
+  text-align: center;
+}
+
+.menu-item a {
+  /* 자연스러운 효과줄 떄 */
+  transition: opacity 300ms ease-in-out;
+}
+
+/* opacity 기본값이 (불투명) */
+.menu-item a :hover {
+  opacity: .5;
+}
+
+.menu-item img {
+  width: 100%;
+}
+
+/* 섹션 고정바 이미지 */
+.mac-story {
+  position: sticky;
+  left: 0; bottom: 0;
+  padding: 8px 0;
+  background: #fff;
+  border-top: 2px solid rgb(255,213,23);
+}
+
+.mac-story-list {
+  margin: 0 auto;
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.mac-story-list a img {
+  width: 100px; height: 100px;
+
+  /* object-fit: cover; 이미지 비율 유지하면서 확대 */
+  object-fit: cover;
+
+  /*  border-radius: 50%; 원형으로 만들때 */
+  border-radius: 50%;
+}
+
+
+/* footer */
+footer {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(235,27,27);
+}
+
+.txt-yellow a {
+  color: rgb(255,213,23);
+}
+
+footer ul li,
+footer ul li a {
+  color: #fff;
+}
+
+.footer-1 { 
+  margin-right: 20px;
+}
+
+.footer-info {
+  flex-grow: 1;
+}
+
+/* footer link */
+.footer-link {
+  display: flex;
+}
+
+/* footer link hover */
+.footer-link li {
+  position: relative; /* 기준 */
+  margin: 0 8px;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: color 300ms ease-in-out;
+}
+
+.footer-link li i {
+  position: absolute;
+  color: rgb(235,27,27);
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  transition: color 300ms ease-in-out;
+}
+
+.footer-link li:hover {
+  background-color: rgb(235,27,27);
+}
+
+/* 부모요소에 호버적용헀을때 자식요소에 적용된다! */
+.footer-link li:hover i {
+  color: #fff;
+}
