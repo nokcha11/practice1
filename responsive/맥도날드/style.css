@@ -1,5 +1,5 @@
 /* common */
-* { margin: 0; padding: 0;}
+* { margin: 0; padding: 0; box-sizing: border-box;}
 body { font-family: "Noto Sans KR", sans-serif;}
 li { list-style-type: none;}
 a { color: inherit; text-decoration: none;}
@@ -139,7 +139,7 @@ header {
   /* object-fit: cover; 이미지 비율 유지하면서 확대 */
   object-fit: cover;
 
-  /*  border-radius: 50%; 원형으로 만들때 */
+  /*  [원형으로 만들때] border-radius: 50%;  */
   border-radius: 50%;
 }
 
@@ -192,6 +192,7 @@ footer ul li a {
   transform: translate(-50%, -50%);
   font-size: 24px;
   transition: color 300ms ease-in-out;
+  cursor: pointer;
 }
 
 .footer-link li:hover {
@@ -201,4 +202,191 @@ footer ul li a {
 /* 부모요소에 호버적용헀을때 자식요소에 적용된다! */
 .footer-link li:hover i {
   color: #fff;
+}
+
+
+/* [데스크 탑 돋보기 클릭시]검색창 search */
+.search {
+  display: none; /* 화면 안보이게 처리 */
+  position: fixed;
+  /* 상하좌우 좌표가 0일때는 화면전체를 채우게 된다! */
+  top: 0;left: 0;right: 0;bottom: 0;
+  /* rgba() */
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* search검색창 css가상 클래스 */
+.search.is-open {
+  display: block;
+}
+
+.search >div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  width: 70%;
+  height: 100%; /* 높이값을 주어야 수직정렬이 된다! */
+  margin: 0 auto;
+}
+
+.search-box {
+  width: 100%;
+  display: flex;
+}
+
+/* 검색창 */
+.search-box input {
+  flex-grow: 1;
+  margin-right: 20px;
+  padding: 24px 40px;
+  border-radius: 30px;
+}
+
+/* button */
+.search-box button {
+  padding: 24px 40px;
+  border-radius: 30px;
+  font-weight: bold;
+  background-color: rgb(255,213,23);
+}
+
+/* close button */
+.search-close-btn {
+  position: relative;
+  width: 80px; height: 80px;
+  margin-top: 50px;
+  border-radius: 50%;
+  background: rgb(255,213,23);
+  cursor: pointer;
+}
+
+.search-close-btn i {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 32px;
+}
+
+
+/* 반응형-태블릿 */
+@media screen and (max-width : 1200px) {
+  
+  /* 햄버거카드 */
+  .menu-item {
+    /* 카드 2개로 정렬 */
+    width: calc((100% - 30px) / 2);
+  }
+
+  /* 섹션 고정바 이미지 */
+  .mac-story-list {
+    width: 50%;
+  }
+
+  .mac-story-list a img {
+    width: 80px; height: 80px;
+  }
+}
+
+@media screen and (max-width : 768px) {
+
+  /* 햄버거메뉴 */
+  .sm-only {
+    display: block;
+  }
+
+  /* 데스크탑 메뉴 */
+  .sm-hidden {
+    display: none;
+  }
+
+  /* 모바일 햄버거 메뉴 */
+  .sidebar-open-btn {
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  /* 햄버거카드 이미지 */
+  .menu-item {
+    /* 카드 1개로 전체 100% */
+    width: 100%;
+  }
+
+  /* footer */
+  footer {
+    flex-wrap: wrap; /* 공간이 부족하면 아래로 내려가게 */
+    align-items: center;
+    padding: 20px 40px;
+  }
+
+  .footer-1 { 
+    margin-right: 20px;
+  }
+
+  .footer-info {
+    text-align: right;
+  }
+
+  /* footer link */
+  .footer-link {
+    margin-top: 30px;
+    width: 100%; 
+    justify-content: center;
+  }
+
+  /* 클릭이벤트로 .active가상클래스 준다! */
+
+  /* 사이드바 메뉴 */
+  .sidebar {
+    /* display: none; 클릭이벤트로 보이게 */
+    /* sidebar와 active에서 display: none, block처리를 하지 않아도
+    position으로 이미 고정시킨상태로 transform으로 안보이게 처리했기때문에
+    같은 효과를 준거와 같다!!! 
+    스크립트에서 준거는 active를 클래스부과 효과만*/
+    position: fixed;
+    top: 0; left: 0;
+    width: 200px; 
+    height: 100%; /* 사이드 전체 차지하기 위해 */
+    padding: 30px;
+    background-color: #fff;
+    z-index: 100; /* 화면 가장 앞으로 나오게 */
+
+    /* 자연스러운 트랜지션 효과 */
+    transform: translateX(-200px); /* 왼쪽으로 빼놓기 위해 마이너스 */
+    transition: transform 300ms ease-in-out;
+  }
+
+  .sidebar.active {
+    /* display: block; 클릭에벤트로 보이게 */
+    /* 가상클래스에서 좌표초기화해서 화면에 안보이게 너비 뺀 값을 보이게 처리 */
+    transform: translateX(0); 
+  }
+
+  /* 오버레이 */
+  /* display : none 차지하고 있는 공간과 보이지 않게  사라짐 */
+    /* visibility: hidden; 차지 하고 있는 공간은 그대로 남지만 보이지 않게처리*/
+  .overlay {
+    /* visibility: hidden; 화면에는 안보이지만 공간은 차지하고있다. */
+    /* 화면에 안보이게 처리하고 .active에서 보이게 처리 */
+    visibility: hidden; 
+    position: fixed;
+
+    /* 전체 창을 채우기 위해 좌표 모두 0으로 */
+    top: 0; left: 0; right: 0; bottom: 0;
+
+    background-color: rgba(0,0,0,0.8);
+    /* visibility와 트랜지션과 opacity 같이 줘서 
+    그라데이션처럼 오버레이가 자연스럽게 사라지게 */
+    opacity: 0;  /* opacity: 0 완전 투명하게 */
+    transition: opacity 300ms ease-in-out;
+  }
+
+  .overlay.active {
+    /* display: block;  클릭에벤트로 보이게 */
+    /* visibility: visible; 기본값 */
+    visibility: visible;
+    
+    /* opacity:1 기본으로 완전 보이는 상태 */
+    opacity: 1;
+  }
 }
