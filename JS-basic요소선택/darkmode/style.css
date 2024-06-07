@@ -1,0 +1,31 @@
+* { margin: 0; padding: 0;}
+li { list-style-type: none;}
+a { text-decoration: none; color: inherit;}
+
+/* header */
+header { 
+  border-bottom: 2px solid #838181;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+button {
+  border: none;
+  padding: 12px 20px;
+  width: 80px;
+  border-radius: 20px;
+  background: #333; color: #fff;
+}
+
+/* darkmode */
+header.dark {
+  background-color: #333; 
+  color: #fff;
+}
+
+header.dark .mode-btn {
+  color: #333;
+  background-color: #fff;
+}
