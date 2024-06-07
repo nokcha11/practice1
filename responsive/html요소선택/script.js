@@ -82,7 +82,7 @@ let arr = ['yejin', 3543, 'ㅎㅎㅎㅎㅎ', txt];
 console.log(arr[1])
 
 // {key : value}
-let tel = 01044524844;
+let tel = 1044524844;
 let obj = {
   이름 : 'yejin',
   전화 : tel,/* 01044524844, */
