@@ -1,0 +1,28 @@
+* { margin: 0; padding: 0;}
+li { list-style-type: none;}
+a { text-decoration: none; color: inherit;}
+
+.wrapper {
+  margin: 50px;
+}
+
+.wrapper h1 {
+  margin: 20px 0;
+}
+
+form {
+  margin: 20px 0;
+  border-top: 4px solid #ccc;
+  padding: 20px 0; box-sizing: border-box;
+}
+textarea {
+  width: 200px; height: 100px;
+}
+
+.submit {
+  padding: 2px 5px; box-sizing: border-box;
+}
+
+.reset {
+  padding: 2px 5px; box-sizing: border-box;
+}
