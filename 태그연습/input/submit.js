@@ -4,6 +4,7 @@ let month = document.querySelector('.month');
 let date = document.querySelector('.date');
 
 //한국표준시 (Korea Standard time)
+// new는 객체를 생성하는 역할 Date 객체
 let kst = new Date();
 console.log(kst)
 
@@ -17,13 +18,13 @@ for(let i = 1920; i <= getYear; i++) {
   year.insertAdjacentHTML('beforeend', options);
 }
 
- // 월 옵션 추가
+ // 월
 for (let j = 1; j <= 12; j++) {
   let options = `<option>${j}</option>`;
   month.insertAdjacentHTML('beforeend', options);
 }
 
-// 일 옵션 추가
+// 일
 for (let k = 1; k <= 30; k++) {
   let options = `<option>${k}</option>`;
   date.insertAdjacentHTML('beforeend', options);
