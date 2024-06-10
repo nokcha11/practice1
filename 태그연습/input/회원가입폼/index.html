@@ -93,10 +93,58 @@
          <tr>
           <td>성별</td>
           <td>
-            <span><input type="radio" name="gender">남자</span>
-            <span><input type="radio" name="gender">여자</span>
+            <label><input type="radio" name="gender" value="1">남자</label>
+            <label><input type="radio" name="gender" value="0">여자</label>
           </td>
          </tr>
+
+         <tr>
+          <td>전화번호</td>
+          <td>
+            <select name="" id="">
+              <option value="">010</option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+            </select> -
+            <input type="text" maxlength="4"> -
+            <input type="text" maxlength="4">
+          </td>
+         </tr>
+
+         <tr>
+          <td>희망연봉</td>
+          <td><input type="range"></td>
+         </tr>
+         
+         <tr>
+          <td>취미</td>
+          <td> <!-- lable: 텍스트 클릭해도 체크 됨 -->
+            <label><input type="checkbox" name="hobby">양궁</label>
+            <label><input type="checkbox" name="hobby">영화감상</label>
+            <label><input type="checkbox" name="hobby">음악감상</label>
+            <label><input type="checkbox" name="hobby">독서</label>
+            <label><input type="checkbox" name="hobby">게임</label>
+          </td>
+         </tr>
+
+         <tr>
+          <td>증명사진</td>
+          <td><input type="file"></td>
+         </tr>
+
+         <tr>
+          <td>자기소개서</td>
+          <td><textarea name="" id=""></textarea></td>
+         </tr>
+
+         <tr>
+          <td>
+            <input id="submit-btn" type="submit">
+            <input type="reset">
+          </td>
+         </tr>
+         
       </table>
     </form>
   </div>
